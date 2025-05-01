@@ -51,8 +51,6 @@ function transformObject(obj) {
 
         obj.sujetoobligado = fixSujeto(obj.sujetoobligado);
 
-        // TODO: quitar objetos informacionPrincipal y complementoPrincipal para reducir la data generada
-        
         if(obj.complementoPrincipal.hasOwnProperty('fechaInicioPeriodo')) {
             let fecha = parseDate(obj.complementoPrincipal.fechaInicioPeriodo);
             Object.assign(obj, { fecha: fecha });
@@ -64,6 +62,9 @@ function transformObject(obj) {
                 sueldo_bruto: obj.complementoPrincipal.montoBruto
             })
         }
+
+        delete obj.informacionPrincipal;
+        delete obj.complementoPrincipal;
     }
     return obj;
 }
