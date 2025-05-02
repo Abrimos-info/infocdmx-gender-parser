@@ -80,8 +80,9 @@ function fixSujeto(str) {
         else return str;
     }
     else {
-        console.log('ERROR: no matching fix found for sujeto', str);
-        process.exit(1);
+        // console.log('ERROR: no matching fix found for sujeto', str);
+        // process.exit(1);
+        return str;
     }
 }
 
