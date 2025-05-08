@@ -65,8 +65,8 @@ function transformObject(obj) {
 
         delete obj.informacionPrincipal;
         delete obj.complementoPrincipal;
+        return obj;
     }
-    return obj;
 }
 
 function parseDate(str) {
